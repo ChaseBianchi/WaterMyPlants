@@ -15,6 +15,7 @@ import java.util.Set;
 /**
  * The entity allowing interaction with the users table
  */
+
 @Entity
 @Table(name = "users")
 public class User
