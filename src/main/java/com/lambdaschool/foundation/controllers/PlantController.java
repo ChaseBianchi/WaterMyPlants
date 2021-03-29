@@ -2,6 +2,8 @@ package com.lambdaschool.foundation.controllers;
 
 import com.lambdaschool.foundation.models.Plant;
 import com.lambdaschool.foundation.services.PlantService;
+import com.lambdaschool.foundation.services.UserService;
+import org.h2.table.Plan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -17,7 +20,7 @@ import java.util.List;
  * The entry point for client to access user, email combinations
  */
 @RestController
-@RequestMapping("/plants")
+@RequestMapping("/api/plants")
 public class PlantController
 {
     /**
@@ -25,6 +28,9 @@ public class PlantController
      */
     @Autowired
     PlantService plantService;
+
+    @Autowired
+    UserService userService;
 
     /**
      * List of all users emails
@@ -84,6 +90,7 @@ public class PlantController
      * @return Status of OK
      */
     @PutMapping("/plant/{plantid}/plant/{nickname}")
+    /// nickname dropped
     public ResponseEntity<?> updateUserEmail(
         @PathVariable
             long plantid,
@@ -99,27 +106,27 @@ public class PlantController
      * Adds a new user email combination
      *
      * @param userid       the user id of the new user plant combination
-     * @param nickname the plant nickname of the new user plant combination
+//     * @param nickname the plant nickname of the new user plant combination
      * @return A location header with the URI to the newly created user plant combination and a status of CREATED
      * @throws URISyntaxException Exception if something does not work in creating the location header
-     * @see PlantService#save(long, String) PlantService.save(long, String)
+//     * @see PlantService#save(long, String) PlantService.save(long, String)
      */
-    @PostMapping(value = "/user/{userid}/plant/{nickname}")
+    @PostMapping(value = "/plant/{userid}", consumes = "application/json")
     public ResponseEntity<?> addNewUserPlant(
-        @PathVariable
-            long userid,
-        @PathVariable
-            String nickname) throws
+            @Valid
+            @RequestBody Plant newPlant,
+            @PathVariable long userid
+
+    ) throws
                                  URISyntaxException
     {
-        Plant newUserPlant = plantService.save(userid,
-                nickname);
+        plantService.save(newPlant, userid);
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
         URI newUserEmailURI = ServletUriComponentsBuilder.fromCurrentServletMapping()
-            .path("/useremails/useremail/{useremailid}")
-            .buildAndExpand(newUserPlant.getPlantid())
+            .path("/plants/plant/{plantid}")
+            .buildAndExpand(newPlant.getPlantid())
             .toUri();
         responseHeaders.setLocation(newUserEmailURI);
 

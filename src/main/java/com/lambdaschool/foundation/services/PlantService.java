@@ -1,6 +1,7 @@
 package com.lambdaschool.foundation.services;
 
 import com.lambdaschool.foundation.models.Plant;
+import com.lambdaschool.foundation.models.User;
 
 import java.util.List;
 
@@ -53,6 +54,7 @@ public interface PlantService
      * @return the new user plant combination
      */
     Plant save(
-        long userid,
-        String nickname);
+        Plant plant,
+        long userid
+        );
 }

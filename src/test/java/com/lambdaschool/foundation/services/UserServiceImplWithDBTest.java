@@ -123,8 +123,12 @@ public class UserServiceImplWithDBTest
             .add(new UserRoles(u2,
                 r2));
         u2.getPlants()
-            .add(new Plant(u2,
-                "tiger@tiger.local"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
 
         User saveU2 = userService.save(u2);
 
@@ -151,8 +155,12 @@ public class UserServiceImplWithDBTest
             .add(new UserRoles(u2,
                 r2));
         u2.getPlants()
-            .add(new Plant(u2,
-                "tiger@tiger.local"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.setUserid(777);
 
         User saveU2 = userService.save(u2);
@@ -180,8 +188,12 @@ public class UserServiceImplWithDBTest
             .add(new UserRoles(u2,
                 r2));
         u2.getPlants()
-            .add(new Plant(u2,
-                "mojo@corgi.local"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.setUserid(4);
 
         User saveU2 = userService.save(u2);
@@ -213,14 +225,26 @@ public class UserServiceImplWithDBTest
                 r2));
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
 
         User updatedu2 = userService.update(u2,
             7);
@@ -250,14 +274,26 @@ public class UserServiceImplWithDBTest
             .add(new UserRoles(u2,
                 r2));
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
 
         Mockito.when(helperFunctions.isAuthorizedToMakeChange(anyString()))
             .thenReturn(false);

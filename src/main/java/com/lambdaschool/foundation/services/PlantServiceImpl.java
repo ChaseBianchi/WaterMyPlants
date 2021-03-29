@@ -107,16 +107,16 @@ public class PlantServiceImpl
     @Transactional
     @Override
     public Plant save(
-        long userid,
-        String emailaddress)
+            Plant plant,
+            long userid
+    )
     {
         User currentUser = userService.findUserById(userid);
 
         if (helperFunctions.isAuthorizedToMakeChange(currentUser.getUsername()))
         {
-            Plant newUserEmail = new Plant(currentUser,
-                emailaddress);
-            return plantRepository.save(newUserEmail);
+            Plant newUserPlant = new Plant(plant.getNickname(), plant.getSpecies(), plant.getH2ofrequency(), currentUser);
+            return plantRepository.save(newUserPlant);
         } else
         {
             // note we should never get to this line but is needed for the compiler

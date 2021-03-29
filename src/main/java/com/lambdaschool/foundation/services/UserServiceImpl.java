@@ -101,8 +101,7 @@ public class UserServiceImpl
         newUser.setUsername(user.getUsername()
             .toLowerCase());
         newUser.setPasswordNoEncrypt(user.getPassword());
-        newUser.setNickname(user.getNickname()
-            .toLowerCase());
+        newUser.setPhonenumber(user.getPhonenumber());
 
         newUser.getRoles()
             .clear();
@@ -117,11 +116,14 @@ public class UserServiceImpl
 
         newUser.getPlants()
             .clear();
-        for (Plant ue : user.getPlants())
+        for (Plant p : user.getPlants())
         {
             newUser.getPlants()
-                .add(new Plant(newUser,
-                    ue.getNickname()));
+                .add(new Plant(p.getNickname(),
+                    p.getSpecies(),
+                    p.getH2ofrequency(),
+                    newUser
+                ));
         }
 
         return userrepos.save(newUser);
@@ -148,11 +150,11 @@ public class UserServiceImpl
                 currentUser.setPasswordNoEncrypt(user.getPassword());
             }
 
-            if (user.getNickname() != null)
-            {
-                currentUser.setNickname(user.getNickname()
-                    .toLowerCase());
-            }
+//            if (user.getNickname() != null)
+//            {
+//                currentUser.setNickname(user.getNickname()
+//                    .toLowerCase());
+//            }
 
             if (user.getRoles()
                 .size() > 0)
@@ -175,11 +177,13 @@ public class UserServiceImpl
             {
                 currentUser.getPlants()
                     .clear();
-                for (Plant ue : user.getPlants())
+                for (Plant p : user.getPlants())
                 {
                     currentUser.getPlants()
-                        .add(new Plant(currentUser,
-                            ue.getNickname()));
+                        .add(new Plant(p.getNickname(),
+                                p.getSpecies(),
+                                p.getH2ofrequency(),
+                                currentUser));
                 }
             }
 

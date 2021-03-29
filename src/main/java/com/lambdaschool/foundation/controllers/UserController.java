@@ -21,7 +21,7 @@ import java.util.List;
  * The entry point for clients to access user data
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController
 {
     /**
@@ -199,6 +199,7 @@ public class UserController
      * @param id the primary key of the user you wish to delete
      * @return Status of OK
      */
+
     @DeleteMapping(value = "/user/{id}")
     public ResponseEntity<?> deleteUserById(
         @PathVariable

@@ -62,112 +62,124 @@ public class SeedData
         userService.deleteAll();
         roleService.deleteAll();
         Role r1 = new Role("admin");
-        Role r2 = new Role("user");
-        Role r3 = new Role("data");
+
 
         r1 = roleService.save(r1);
-        r2 = roleService.save(r2);
-        r3 = roleService.save(r3);
 
         // admin, data, user
         User u1 = new User("admin",
             "password",
-            "plant1");
+                "100-011-1010");
         u1.getRoles()
             .add(new UserRoles(u1,
                 r1));
-        u1.getRoles()
-            .add(new UserRoles(u1,
-                r2));
-        u1.getRoles()
-            .add(new UserRoles(u1,
-                r3));
         u1.getPlants()
-            .add(new Plant(u1,
-                "plant2"));
+            .add(new Plant(
+                    "Piney",
+                    "Pine Tree",
+                    "monthly",
+                    u1
+            ));
         u1.getPlants()
-            .add(new Plant(u1,
-                "plant3"));
+                .add(new Plant(
+                        "Prickles",
+                        "Cactus",
+                        "never",
+                        u1
+                ));
 
         userService.save(u1);
 
         // data, user
-        User u2 = new User("cinnamon",
+        User u2 = new User("Jalpa",
             "1234567",
-            "plant5");
+            "555-561-6628");
         u2.getRoles()
             .add(new UserRoles(u2,
-                r2));
-        u2.getRoles()
-            .add(new UserRoles(u2,
-                r3));
+                r1));
         u2.getPlants()
-            .add(new Plant(u2,
-                "plant6"));
+                .add(new Plant(
+                        "Herman",
+                        "Worm Wood",
+                        "daily",
+                        u1
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "plant7"));
+                .add(new Plant(
+                        "Judith",
+                        "Juniper Tree",
+                        "weekly",
+                        u1
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "plant8"));
+                .add(new Plant(
+                        "Red",
+                        "Rose",
+                        "biweekly",
+                        u1
+                ));
         userService.save(u2);
 
         // user
-        User u3 = new User("barnbarn",
-            "ILuvM4th!",
-            "plant9");
+        User u3 = new User("justin",
+            "asdfasdf",
+            "800-159-7530");
         u3.getRoles()
             .add(new UserRoles(u3,
-                r2));
+                r1));
         u3.getPlants()
-            .add(new Plant(u3,
-                "plant10"));
+                .add(new Plant(
+                        "Bob Barker",
+                        "Chia Pet",
+                        "daily",
+                        u1
+                ));
         userService.save(u3);
 
-        User u4 = new User("puttat",
-            "password",
-            "plant11");
+        User u4 = new User("Nick",
+            "secret",
+            "223-665-8855");
         u4.getRoles()
             .add(new UserRoles(u4,
-                r2));
+                r1));
         userService.save(u4);
 
-        User u5 = new User("misskitty",
+        User u5 = new User("Growtopia",
             "password",
-            "plant12");
+            "206-455-5675");
         u5.getRoles()
             .add(new UserRoles(u5,
-                r2));
+                r1));
         userService.save(u5);
 
-        if (false)
-        {
-            // using JavaFaker create a bunch of regular users
-            // https://www.baeldung.com/java-faker
-            // https://www.baeldung.com/regular-expressions-java
-
-            FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-US"),
-                new RandomService());
-            Faker nameFaker = new Faker(new Locale("en-US"));
-
-            for (int i = 0; i < 25; i++)
-            {
-                new User();
-                User fakeUser;
-
-                fakeUser = new User(nameFaker.name()
-                    .username(),
-                    "password",
-                    nameFaker.internet()
-                        .emailAddress());
-                fakeUser.getRoles()
-                    .add(new UserRoles(fakeUser,
-                        r2));
-                fakeUser.getPlants()
-                    .add(new Plant(fakeUser,
-                        fakeValuesService.bothify("????##@gmail.com")));
-                userService.save(fakeUser);
-            }
-        }
+//        if (false)
+//        {
+//            // using JavaFaker create a bunch of regular users
+//            // https://www.baeldung.com/java-faker
+//            // https://www.baeldung.com/regular-expressions-java
+//
+//            FakeValuesService fakeValuesService = new FakeValuesService(new Locale("en-US"),
+//                new RandomService());
+//            Faker nameFaker = new Faker(new Locale("en-US"));
+//
+//            for (int i = 0; i < 25; i++)
+//            {
+//                new User();
+//                User fakeUser;
+//
+//                fakeUser = new User(nameFaker.name()
+//                    .username(),
+//                    "password",
+//                    nameFaker.internet()
+//                        .emailAddress());
+//                fakeUser.getRoles()
+//                    .add(new UserRoles(fakeUser,
+//                        r1));
+//                fakeUser.getPlants()
+//                    .add(new Plant(fakeUser,
+//                        fakeValuesService.bothify("????##@gmail.com")));
+//                userService.save(fakeUser);
+//            }
+//        }
     }
 }

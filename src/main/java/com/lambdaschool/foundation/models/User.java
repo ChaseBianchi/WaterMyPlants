@@ -42,12 +42,16 @@ public class User
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    @Column
+    private String phonenumber;
+
+
     /**
      * Primary email account of user. Could be used as the userid. Cannot be null and must be unique.
      */
-    @Column(nullable = false,
-        unique = true)
-    private String nickname;
+//    @Column(nullable = false,
+//        unique = true)
+//    private String nickname;
 
     /**
      * A list of emails for this user
@@ -84,16 +88,23 @@ public class User
      *
      * @param username     The username (String) of the user
      * @param password     The password (String) of the user
-     * @param nickname The primary email (String) of the user
+//     * @param nickname The primary email (String) of the user
      */
-    public User(
-        String username,
-        String password,
-        String nickname)
-    {
-        setUsername(username);
-        setPassword(password);
-        this.nickname = nickname;
+//    public User(
+//        String username,
+//        String password,
+//        String phonenumber)
+//    {
+//        setUsername(username);
+//        setPassword(password);
+//        setPhonenumber(phonenumber);
+//    }
+
+
+    public User(String username, String password, String phonenumber) {
+        this.username = username;
+        this.password = password;
+        this.phonenumber = phonenumber;
     }
 
     /**
@@ -142,20 +153,20 @@ public class User
      *
      * @return the primary email (String) for the user converted to lowercase
      */
-    public String getNickname()
-    {
-        return nickname;
-    }
+//    public String getNickname()
+//    {
+//        return nickname;
+//    }
 
     /**
      * setter for primary email
      *
      * @param primaryemail the new primary email (String) for the user converted to lowercase
      */
-    public void setNickname(String nickname)
-    {
-        this.nickname = nickname.toLowerCase();
-    }
+//    public void setNickname(String nickname)
+//    {
+//        this.nickname = nickname.toLowerCase();
+//    }
 
     /**
      * Getter for the password
@@ -184,6 +195,14 @@ public class User
     {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         this.password = passwordEncoder.encode(password);
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     /**

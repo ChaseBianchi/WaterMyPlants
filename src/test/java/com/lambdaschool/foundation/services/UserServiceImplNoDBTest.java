@@ -72,15 +72,23 @@ public class UserServiceImplNoDBTest
                 r3));
 
         u1.getPlants()
-            .add(new Plant(u1,
-                "admin@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u1
+                ));
         u1.getPlants()
             .get(0)
             .setPlantid(10);
 
         u1.getPlants()
-            .add(new Plant(u1,
-                "admin@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u1
+                ));
         u1.getPlants()
             .get(1)
             .setPlantid(11);
@@ -101,22 +109,34 @@ public class UserServiceImplNoDBTest
                 r3));
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
             .get(0)
             .setPlantid(20);
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
             .get(1)
             .setPlantid(21);
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
             .get(2)
             .setPlantid(22);
@@ -133,8 +153,12 @@ public class UserServiceImplNoDBTest
                 r1));
 
         u3.getPlants()
-            .add(new Plant(u3,
-                "barnbarn@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u3
+                ));
         u3.getPlants()
             .get(0)
             .setPlantid(30);
@@ -274,8 +298,12 @@ public class UserServiceImplNoDBTest
             .add(new UserRoles(u2,
                 r2));
         u2.getPlants()
-            .add(new Plant(u2,
-                "tiger@tiger.local"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
 
         Mockito.when(userrepos.save(any(User.class)))
             .thenReturn(u2);
@@ -301,8 +329,12 @@ public class UserServiceImplNoDBTest
             .add(new UserRoles(u2,
                 r2));
         u2.getPlants()
-            .add(new Plant(u2,
-                "tiger@tiger.local"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.setUserid(103L);
 
         Mockito.when(roleService.findRoleById(2))
@@ -333,14 +365,26 @@ public class UserServiceImplNoDBTest
                 r2));
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
 
         Mockito.when(roleService.findRoleById(2))
             .thenReturn(r2);
@@ -376,14 +420,26 @@ public class UserServiceImplNoDBTest
                 r2));
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.thump"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
 
         Mockito.when(roleService.findRoleById(2))
             .thenReturn(r2);
