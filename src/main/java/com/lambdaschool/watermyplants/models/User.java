@@ -3,6 +3,8 @@ package com.lambdaschool.watermyplants.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -16,6 +18,7 @@ import java.util.Set;
  * The entity allowing interaction with the users table
  */
 
+@ApiModel(value = "User", description = "User class")
 @Entity
 @Table(name = "users")
 public class User
@@ -26,6 +29,7 @@ public class User
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @ApiModelProperty(name = "user id", value = "primary key for user", required = true, example = "1")
     private long userid;
 
     /**
@@ -33,6 +37,7 @@ public class User
      */
     @Column(nullable = false,
         unique = true)
+    @ApiModelProperty(name = "username", value = "name of user", required = true, example = "Chase")
     private String username;
 
     /**
@@ -40,9 +45,11 @@ public class User
      */
     @Column(nullable = false)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ApiModelProperty(name = "password", value = "password for user", required = true, example = "secret")
     private String password;
 
     @Column
+    @ApiModelProperty(name = "phone number", value = "phone number for user", required = true, example = "852-265-5558")
     private String phonenumber;
 
 
