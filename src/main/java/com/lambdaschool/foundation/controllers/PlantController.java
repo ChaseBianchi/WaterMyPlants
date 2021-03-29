@@ -17,7 +17,7 @@ import java.util.List;
  * The entry point for client to access user, email combinations
  */
 @RestController
-@RequestMapping("/plants")
+@RequestMapping("/api/plants")
 public class PlantController
 {
     /**
@@ -84,6 +84,7 @@ public class PlantController
      * @return Status of OK
      */
     @PutMapping("/plant/{plantid}/plant/{nickname}")
+    /// nickname dropped
     public ResponseEntity<?> updateUserEmail(
         @PathVariable
             long plantid,
@@ -105,6 +106,7 @@ public class PlantController
      * @see PlantService#save(long, String) PlantService.save(long, String)
      */
     @PostMapping(value = "/user/{userid}/plant/{nickname}")
+    // nickanme gone
     public ResponseEntity<?> addNewUserPlant(
         @PathVariable
             long userid,

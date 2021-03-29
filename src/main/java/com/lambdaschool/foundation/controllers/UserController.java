@@ -21,7 +21,7 @@ import java.util.List;
  * The entry point for clients to access user data
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController
 {
     /**

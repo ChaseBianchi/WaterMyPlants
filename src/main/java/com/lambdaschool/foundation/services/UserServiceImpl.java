@@ -101,8 +101,8 @@ public class UserServiceImpl
         newUser.setUsername(user.getUsername()
             .toLowerCase());
         newUser.setPasswordNoEncrypt(user.getPassword());
-        newUser.setNickname(user.getNickname()
-            .toLowerCase());
+//        newUser.setNickname(user.getNickname()
+//            .toLowerCase());
 
         newUser.getRoles()
             .clear();
@@ -148,11 +148,11 @@ public class UserServiceImpl
                 currentUser.setPasswordNoEncrypt(user.getPassword());
             }
 
-            if (user.getNickname() != null)
-            {
-                currentUser.setNickname(user.getNickname()
-                    .toLowerCase());
-            }
+//            if (user.getNickname() != null)
+//            {
+//                currentUser.setNickname(user.getNickname()
+//                    .toLowerCase());
+//            }
 
             if (user.getRoles()
                 .size() > 0)

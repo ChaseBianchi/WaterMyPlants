@@ -45,9 +45,9 @@ public class User
     /**
      * Primary email account of user. Could be used as the userid. Cannot be null and must be unique.
      */
-    @Column(nullable = false,
-        unique = true)
-    private String nickname;
+//    @Column(nullable = false,
+//        unique = true)
+//    private String nickname;
 
     /**
      * A list of emails for this user
@@ -93,7 +93,6 @@ public class User
     {
         setUsername(username);
         setPassword(password);
-        this.nickname = nickname;
     }
 
     /**
@@ -142,20 +141,20 @@ public class User
      *
      * @return the primary email (String) for the user converted to lowercase
      */
-    public String getNickname()
-    {
-        return nickname;
-    }
+//    public String getNickname()
+//    {
+//        return nickname;
+//    }
 
     /**
      * setter for primary email
      *
      * @param primaryemail the new primary email (String) for the user converted to lowercase
      */
-    public void setNickname(String nickname)
-    {
-        this.nickname = nickname.toLowerCase();
-    }
+//    public void setNickname(String nickname)
+//    {
+//        this.nickname = nickname.toLowerCase();
+//    }
 
     /**
      * Getter for the password
