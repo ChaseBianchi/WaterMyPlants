@@ -199,6 +199,7 @@ public class UserController
      * @param id the primary key of the user you wish to delete
      * @return Status of OK
      */
+
     @DeleteMapping(value = "/user/{id}")
     public ResponseEntity<?> deleteUserById(
         @PathVariable

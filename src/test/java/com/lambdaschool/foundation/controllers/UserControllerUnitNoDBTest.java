@@ -75,31 +75,39 @@ public class UserControllerUnitNoDBTest
 
         // admin, data, user
         User u1 = new User("admin",
-            "ILuvM4th!",
-            "admin@lambdaschool.test");
+                "ILuvM4th!",
+                "admin@lambdaschool.test");
         u1.getRoles()
-            .add(new UserRoles(u1,
-                r1));
+                .add(new UserRoles(u1,
+                        r1));
         u1.getRoles()
-            .add(new UserRoles(u1,
-                r2));
+                .add(new UserRoles(u1,
+                        r2));
         u1.getRoles()
-            .add(new UserRoles(u1,
-                r3));
+                .add(new UserRoles(u1,
+                        r3));
 
         u1.getPlants()
-            .add(new Plant(u1,
-                "admin@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u1
+                ));
         u1.getPlants()
-            .get(0)
-            .setPlantid(10);
+                .get(0)
+                .setPlantid(10);
 
         u1.getPlants()
-            .add(new Plant(u1,
-                "admin@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u1
+                ));
         u1.getPlants()
-            .get(1)
-            .setPlantid(11);
+                .get(1)
+                .setPlantid(11);
 
         u1.setUserid(101);
         userList.add(u1);
@@ -107,73 +115,89 @@ public class UserControllerUnitNoDBTest
         // data, user
         ArrayList<UserRoles> datas = new ArrayList<>();
         User u2 = new User("cinnamon",
-            "1234567",
-            "cinnamon@lambdaschool.test");
+                "1234567",
+                "cinnamon@lambdaschool.test");
         u1.getRoles()
-            .add(new UserRoles(u2,
-                r2));
+                .add(new UserRoles(u2,
+                        r2));
         u1.getRoles()
-            .add(new UserRoles(u2,
-                r3));
+                .add(new UserRoles(u2,
+                        r3));
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .get(0)
-            .setPlantid(20);
+                .get(0)
+                .setPlantid(20);
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .get(1)
-            .setPlantid(21);
+                .get(1)
+                .setPlantid(21);
 
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .get(2)
-            .setPlantid(22);
+                .get(2)
+                .setPlantid(22);
 
         u2.setUserid(102);
         userList.add(u2);
 
         // user
         User u3 = new User("testingbarn",
-            "ILuvM4th!",
-            "testingbarn@school.lambda");
+                "ILuvM4th!",
+                "testingbarn@school.lambda");
         u3.getRoles()
-            .add(new UserRoles(u3,
-                r1));
+                .add(new UserRoles(u3,
+                        r1));
 
         u3.getPlants()
-            .add(new Plant(u3,
-                "barnbarn@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u3
+                ));
         u3.getPlants()
-            .get(0)
-            .setPlantid(30);
+                .get(0)
+                .setPlantid(30);
 
         u3.setUserid(103);
         userList.add(u3);
 
         User u4 = new User("testingcat",
-            "password",
-            "testingcat@school.lambda");
+                "password",
+                "testingcat@school.lambda");
         u4.getRoles()
-            .add(new UserRoles(u4,
-                r2));
+                .add(new UserRoles(u4,
+                        r2));
 
         u4.setUserid(104);
         userList.add(u4);
 
         User u5 = new User("testingdog",
-            "password",
-            "testingdog@school.lambda");
+                "password",
+                "testingdog@school.lambda");
         u4.getRoles()
-            .add(new UserRoles(u5,
-                r2));
+                .add(new UserRoles(u5,
+                        r2));
 
         u5.setUserid(105);
         userList.add(u5);

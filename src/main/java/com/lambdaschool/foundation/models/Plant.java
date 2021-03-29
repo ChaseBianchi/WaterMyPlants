@@ -59,13 +59,13 @@ public class Plant
      * @param user      the user (User) assigned to the email
      * @param nickname useremail (String) for the given user
      */
-    public Plant(
-        User user,
-        String nickname)
-    {
-        this.nickname = nickname;
-        this.user = user;
-    }
+//    public Plant(
+//        User user,
+//        String nickname)
+//    {
+//        this.nickname = nickname;
+//        this.user = user;
+//    }
 
     public Plant(String nickname, String species, String h2ofrequency, User user) {
         this.nickname = nickname;

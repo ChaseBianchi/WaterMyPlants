@@ -83,11 +83,19 @@ public class SeedData
             .add(new UserRoles(u1,
                 r3));
         u1.getPlants()
-            .add(new Plant(u1,
-                "admin@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u1
+                ));
         u1.getPlants()
-            .add(new Plant(u1,
-                "admin@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u1
+                ));
 
         userService.save(u1);
 
@@ -102,14 +110,26 @@ public class SeedData
             .add(new UserRoles(u2,
                 r3));
         u2.getPlants()
-            .add(new Plant(u2,
-                "cinnamon@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "hops@mymail.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         u2.getPlants()
-            .add(new Plant(u2,
-                "bunny@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         userService.save(u2);
 
         // user
@@ -120,8 +140,12 @@ public class SeedData
             .add(new UserRoles(u3,
                 r2));
         u3.getPlants()
-            .add(new Plant(u3,
-                "barnbarn@email.test"));
+                .add(new Plant(
+                        "Piney",
+                        "Pine Tree",
+                        "monthly",
+                        u2
+                ));
         userService.save(u3);
 
         User u4 = new User("puttat",
@@ -150,24 +174,24 @@ public class SeedData
                 new RandomService());
             Faker nameFaker = new Faker(new Locale("en-US"));
 
-            for (int i = 0; i < 25; i++)
-            {
-                new User();
-                User fakeUser;
-
-                fakeUser = new User(nameFaker.name()
-                    .username(),
-                    "password",
-                    nameFaker.internet()
-                        .emailAddress());
-                fakeUser.getRoles()
-                    .add(new UserRoles(fakeUser,
-                        r2));
-                fakeUser.getPlants()
-                    .add(new Plant(fakeUser,
-                        fakeValuesService.bothify("????##@gmail.com")));
-                userService.save(fakeUser);
-            }
+//            for (int i = 0; i < 25; i++)
+//            {
+//                new User();
+//                User fakeUser;
+//
+//                fakeUser = new User(nameFaker.name()
+//                    .username(),
+//                    "password",
+//                    nameFaker.internet()
+//                        .emailAddress());
+//                fakeUser.getRoles()
+//                    .add(new UserRoles(fakeUser,
+//                        r2));
+//                fakeUser.getPlants()
+//                    .add(new Plant(fakeUser,
+//                        fakeValuesService.bothify("????##@gmail.com")));
+//                userService.save(fakeUser);
+//            }
         }
     }
 }
