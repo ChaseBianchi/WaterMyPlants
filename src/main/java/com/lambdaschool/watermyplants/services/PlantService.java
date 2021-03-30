@@ -41,9 +41,8 @@ public interface PlantService
      * @param nickname The new plant nickname (String) for this user plant combination
      * @return The Plant object that you updated including the new nickname
      */
-    Plant update(
-        long plantid,
-        String nickname);
+    Plant update(Plant plant,
+        long plantid);
 
     /**
      * Add a new User Email combination

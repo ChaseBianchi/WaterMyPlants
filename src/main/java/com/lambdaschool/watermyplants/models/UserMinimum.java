@@ -1,6 +1,5 @@
 package com.lambdaschool.watermyplants.models;
 
-import javax.validation.constraints.Email;
 
 /**
  * A model used to create a new user. The minimum information needed to create a user.
@@ -21,8 +20,8 @@ public class UserMinimum
     /**
      * The user's primary email address (String)
      */
-    @Email
-    private String primaryemail;
+    private String phonenumber;
+
 
     /**
      * Getter for the username
@@ -65,23 +64,17 @@ public class UserMinimum
         this.password = password;
     }
 
-    /**
-     * Getter for email for this user
-     *
-     * @return the email address (String) for this user
-     */
-    public String getPrimaryemail()
-    {
-        return primaryemail;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
     /**
      * Setter for email for this user
      *
-     * @param primaryemail the new email address (String) for this user.
+//     * @param primaryemail the new email address (String) for this user.
      */
-    public void setPrimaryemail(String primaryemail)
+    public void setPhonenumber(String phonenumber)
     {
-        this.primaryemail = primaryemail;
+        this.phonenumber = phonenumber;
     }
 }

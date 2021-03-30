@@ -1,5 +1,6 @@
 package com.lambdaschool.watermyplants.config;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -117,6 +118,7 @@ public class AuthorizationServerConfig
      *                  We give the configurer some custom configuration and let it work!
      * @throws Exception if the configuration fails
      */
+    @ApiOperation(value = "login as user")
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints)
         throws

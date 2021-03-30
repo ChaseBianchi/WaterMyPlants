@@ -175,20 +175,20 @@ public class UserController
      * <br> Example: <a href="http://localhost:2019/users/user/7">http://localhost:2019/users/user/7</a>
      *
      * @param updateUser An object containing values for just the fields that are being updated. All other fields are left NULL.
-     * @param id         The primary key of the user you wish to update.
+//     * @param id         The primary key of the user you wish to update.
      * @return A status of OK
      * @see UserService#update(User, long) UserService.update(User, long)
      */
-    @PatchMapping(value = "/user/{id}",
+    @PatchMapping(value = "/user/{userId}",
         consumes = "application/json")
     public ResponseEntity<?> updateUser(
         @RequestBody
             User updateUser,
         @PathVariable
-            long id)
+            long userId)
     {
         userService.update(updateUser,
-            id);
+                userId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -196,16 +196,16 @@ public class UserController
      * Deletes a given user along with associated emails and roles
      * <br>Example: <a href="http://localhost:2019/users/user/14">http://localhost:2019/users/user/14</a>
      *
-     * @param id the primary key of the user you wish to delete
+//     * @param id the primary key of the user you wish to delete
      * @return Status of OK
      */
 
-    @DeleteMapping(value = "/user/{id}")
+    @DeleteMapping(value = "/user/{userId}")
     public ResponseEntity<?> deleteUserById(
         @PathVariable
-            long id)
+            long userId)
     {
-        userService.delete(id);
+        userService.delete(userId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

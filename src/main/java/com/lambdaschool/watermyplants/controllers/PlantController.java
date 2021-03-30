@@ -72,7 +72,7 @@ public class PlantController
      * @return Status of OK
      */
     @DeleteMapping(value = "/plant/{plantid}")
-    public ResponseEntity<?> deleteUserEmailById(
+    public ResponseEntity<?> deleteUserPlantById(
         @PathVariable
             long plantid)
     {
@@ -85,19 +85,19 @@ public class PlantController
      * <br>Example: <a href="http://localhost:2019/useremails/useremail/9/email/favbun@hops.local">http://localhost:2019/useremails/useremail/9/email/favbun@hops.local</a>
      *
      * @param plantid  The primary key of the user email combination you wish to change
-     * @param nickname The new email (String)
+//     * @param nickname The new email (String)
      * @return Status of OK
      */
-    @PutMapping("/plant/{plantid}/plant/{nickname}")
+    @PutMapping(value = "/plant/{plantid}", consumes = "application/json")
     /// nickname dropped
-    public ResponseEntity<?> updateUserEmail(
+    public ResponseEntity<?> updateUserPlant(
         @PathVariable
             long plantid,
-        @PathVariable
-            String nickname)
+            Plant plant
+        )
     {
-        plantService.update(plantid,
-                nickname);
+
+        plantService.update(plant, plantid);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -123,11 +123,11 @@ public class PlantController
 
         // set the location header for the newly created resource
         HttpHeaders responseHeaders = new HttpHeaders();
-        URI newUserEmailURI = ServletUriComponentsBuilder.fromCurrentServletMapping()
+        URI newUserPlantURI = ServletUriComponentsBuilder.fromCurrentServletMapping()
             .path("/plants/plant/{plantid}")
             .buildAndExpand(newPlant.getPlantid())
             .toUri();
-        responseHeaders.setLocation(newUserEmailURI);
+        responseHeaders.setLocation(newUserPlantURI);
 
         return new ResponseEntity<>(null,
             responseHeaders,

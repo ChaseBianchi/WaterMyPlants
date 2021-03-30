@@ -69,12 +69,12 @@ public class OpenController
 
         newuser.setUsername(newminuser.getUsername());
         newuser.setPassword(newminuser.getPassword());
-//        newuser.setNickname(newminuser.getPrimaryemail());
+        newuser.setPhonenumber(newminuser.getPhonenumber());
 
         // add the default role of user
         Set<UserRoles> newRoles = new HashSet<>();
         newRoles.add(new UserRoles(newuser,
-            roleService.findByName("user")));
+            roleService.findByName("admin")));
         newuser.setRoles(newRoles);
 
         newuser = userService.save(newuser);
