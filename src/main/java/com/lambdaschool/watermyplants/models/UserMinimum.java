@@ -22,7 +22,6 @@ public class UserMinimum
      */
     private String phonenumber;
 
-
     /**
      * Getter for the username
      *
@@ -72,6 +71,7 @@ public class UserMinimum
      * Setter for email for this user
      *
 //     * @param primaryemail the new email address (String) for this user.
+
      */
     public void setPhonenumber(String phonenumber)
     {
