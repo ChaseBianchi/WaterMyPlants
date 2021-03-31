@@ -98,7 +98,8 @@ public class PlantController
     {
 
         plantService.update(plant, plantid);
-        return new ResponseEntity<>(HttpStatus.OK);
+        Plant updatedPlant = plantService.findPlantById(plantid);
+        return new ResponseEntity<>(updatedPlant, HttpStatus.OK);
     }
 
     /**
