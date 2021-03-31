@@ -42,7 +42,7 @@ public class Plant
     @ManyToOne
     @JoinColumn(name = "userid",
         nullable = false)
-    @JsonIgnoreProperties(value = "useremails",
+    @JsonIgnoreProperties(value = "plants",
         allowSetters = true)
     private User user;
 
@@ -107,7 +107,7 @@ public class Plant
 
     public void setNickname(String nickname)
     {
-        this.nickname = nickname.toLowerCase();
+        this.nickname = nickname;
     }
 
     public String getSpecies() {

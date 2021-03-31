@@ -89,10 +89,10 @@ public class PlantController
      * @return Status of OK
      */
     @PutMapping(value = "/plant/{plantid}", consumes = "application/json")
-    /// nickname dropped
     public ResponseEntity<?> updateUserPlant(
-        @PathVariable
+            @PathVariable
             long plantid,
+            @RequestBody
             Plant plant
         )
     {
@@ -110,6 +110,7 @@ public class PlantController
      * @throws URISyntaxException Exception if something does not work in creating the location header
 //     * @see PlantService#save(long, String) PlantService.save(long, String)
      */
+
     @PostMapping(value = "/plant/{userid}", consumes = "application/json")
     public ResponseEntity<?> addNewUserPlant(
             @Valid

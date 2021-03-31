@@ -77,7 +77,7 @@ public class UserServiceImpl
     @Override
     public User findByName(String name)
     {
-        User uu = userrepos.findByUsername(name.toLowerCase());
+        User uu = userrepos.findByUsername(name);
         if (uu == null)
         {
             throw new ResourceNotFoundException("User name " + name + " not found!");
@@ -98,8 +98,7 @@ public class UserServiceImpl
             newUser.setUserid(user.getUserid());
         }
 
-        newUser.setUsername(user.getUsername()
-            .toLowerCase());
+        newUser.setUsername(user.getUsername());
         newUser.setPasswordNoEncrypt(user.getPassword());
         newUser.setPhonenumber(user.getPhonenumber());
 
@@ -141,8 +140,7 @@ public class UserServiceImpl
         {
             if (user.getUsername() != null)
             {
-                currentUser.setUsername(user.getUsername()
-                    .toLowerCase());
+                currentUser.setUsername(user.getUsername());
             }
 
             if (user.getPassword() != null)
