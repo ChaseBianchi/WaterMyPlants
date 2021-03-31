@@ -63,20 +63,15 @@ public class UserMinimum
         this.password = password;
     }
 
-    /**
-     * Getter for email for this user
-     *
-     * @return the email address (String) for this user
-     */
-    public String getPhonenumber()
-    {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
     /**
      * Setter for email for this user
      *
-     * @param phonenumber the new email address (String) for this user.
+//     * @param primaryemail the new email address (String) for this user.
+
      */
     public void setPhonenumber(String phonenumber)
     {

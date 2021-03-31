@@ -42,7 +42,7 @@ public class Plant
     @ManyToOne
     @JoinColumn(name = "userid",
         nullable = false)
-    @JsonIgnoreProperties(value = "useremails",
+    @JsonIgnoreProperties(value = "plants",
         allowSetters = true)
     private User user;
 
@@ -87,11 +87,11 @@ public class Plant
     /**
      * Setter for useremailid. Used for seeding data
      *
-     * @param useremailid the new primary key (long) of this useremail object
+//     * @param useremailid the new primary key (long) of this useremail object
      */
-    public void setPlantid(long useremailid)
+    public void setPlantid(long plantid)
     {
-        this.plantid = useremailid;
+        this.plantid = plantid;
     }
 
     /**
@@ -104,14 +104,10 @@ public class Plant
         return nickname;
     }
 
-    /**
-     * Setter for useremail
-     *
-     * @param useremail the email (String) to replace the one currently assigned to this useremail object, in lowercase
-     */
-    public void setNickname(String useremail)
+
+    public void setNickname(String nickname)
     {
-        this.nickname = useremail.toLowerCase();
+        this.nickname = nickname;
     }
 
     public String getSpecies() {

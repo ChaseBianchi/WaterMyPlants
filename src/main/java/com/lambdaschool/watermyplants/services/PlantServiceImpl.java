@@ -77,9 +77,8 @@ public class PlantServiceImpl
 
     @Transactional
     @Override
-    public Plant update(
-        long plantid,
-        String nickname)
+    public Plant update(Plant plantupdate,
+        long plantid)
     {
         if (plantRepository.findById(plantid)
             .isPresent())
@@ -90,7 +89,18 @@ public class PlantServiceImpl
                 .getUsername()))
             {
                 Plant plant = findPlantById(plantid);
-                plant.setNickname(nickname.toLowerCase());
+                if(plantupdate.getNickname()!=null) {
+                    plant.setNickname(plantupdate.getNickname());
+                }
+                if(plantupdate.getSpecies()!=null) {
+                    plant.setSpecies(plantupdate.getSpecies());
+                }
+                if(plantupdate.getH2ofrequency()!=null) {
+                    plant.setH2ofrequency(plantupdate.getH2ofrequency());
+                }
+                if(plantupdate.getUser()!=null) {
+                    plant.setUser(plantupdate.getUser());
+                }
                 return plantRepository.save(plant);
             } else
             {
