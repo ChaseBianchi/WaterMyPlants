@@ -147,12 +147,9 @@ public class UserServiceImpl
             {
                 currentUser.setPasswordNoEncrypt(user.getPassword());
             }
-
-//            if (user.getNickname() != null)
-//            {
-//                currentUser.setNickname(user.getNickname()
-//                    .toLowerCase());
-//            }
+            if(user.getPhonenumber()!=null){
+                currentUser.setPhonenumber(user.getPhonenumber());
+            }
 
             if (user.getRoles()
                 .size() > 0)

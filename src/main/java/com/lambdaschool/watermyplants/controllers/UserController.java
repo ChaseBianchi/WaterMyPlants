@@ -149,24 +149,35 @@ public class UserController
      *
      * @param updateUser A complete User including all emails and roles to be used to
      *                   replace the User. Roles must already exist.
-     * @param userid     The primary key of the user you wish to replace.
+//     * @param userid     The primary key of the user you wish to replace.
      * @return status of OK
      * @see UserService#save(User) UserService.save(User)
      */
-    @PutMapping(value = "/user/{userid}",
-        consumes = "application/json")
-    public ResponseEntity<?> updateFullUser(
-        @Valid
-        @RequestBody
-            User updateUser,
-        @PathVariable
-            long userid)
+    @PutMapping(value = "/user/{userId}", consumes = "application/json")
+    public ResponseEntity<?> updateUserPut(
+            @RequestBody
+                    User updateUser,
+            @PathVariable
+                    long userId)
     {
-        updateUser.setUserid(userid);
-        userService.save(updateUser);
-
-        return new ResponseEntity<>(HttpStatus.OK);
+        userService.update(updateUser,
+                userId);
+        return new ResponseEntity<>(userService.findUserById(userId), HttpStatus.OK);
     }
+//    @PutMapping(value = "/user/{userid}",
+//        consumes = "application/json")
+//    public ResponseEntity<?> updateFullUser(
+//        @Valid
+//        @RequestBody
+//            User updateUser,
+//        @PathVariable
+//            long userid)
+//    {
+//        updateUser.setUserid(userid);
+//        userService.save(updateUser);
+//
+//        return new ResponseEntity<>(HttpStatus.OK);
+//    }
 
     /**
      * Updates the user record associated with the given id with the provided data. Only the provided fields are affected.
@@ -181,7 +192,7 @@ public class UserController
      */
     @PatchMapping(value = "/user/{userId}",
         consumes = "application/json")
-    public ResponseEntity<?> updateUser(
+    public ResponseEntity<?> updateUserPatch(
         @RequestBody
             User updateUser,
         @PathVariable
@@ -189,7 +200,7 @@ public class UserController
     {
         userService.update(updateUser,
                 userId);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(userService.findUserById(userId), HttpStatus.OK);
     }
 
     /**

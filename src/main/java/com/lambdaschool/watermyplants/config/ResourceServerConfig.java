@@ -54,7 +54,7 @@ public class ResourceServerConfig
                 "/createnewuser")
             .permitAll()
                 .antMatchers(HttpMethod.GET,
-                        "/api/users/**", "/api/plants**")
+                        "/api/users/**", "/api/plants**", "/api/auth/logout")
                 .hasAnyRole("ADMIN")
             .antMatchers(HttpMethod.POST,
                 "/api/users/**", "/api/plants**")
