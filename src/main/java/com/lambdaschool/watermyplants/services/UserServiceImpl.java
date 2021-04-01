@@ -151,12 +151,6 @@ public class UserServiceImpl
                 currentUser.setPhonenumber(user.getPhonenumber());
             }
 
-//            if (user.getNickname() != null)
-//            {
-//                currentUser.setNickname(user.getNickname()
-//                    .toLowerCase());
-//            }
-
             if (user.getRoles()
                 .size() > 0)
             {
