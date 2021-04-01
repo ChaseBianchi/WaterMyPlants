@@ -147,6 +147,9 @@ public class UserServiceImpl
             {
                 currentUser.setPasswordNoEncrypt(user.getPassword());
             }
+            if(user.getPhonenumber()!=null){
+                currentUser.setPhonenumber(user.getPhonenumber());
+            }
 
 //            if (user.getNickname() != null)
 //            {
