@@ -1,6 +1,6 @@
 # Back end for Water My Plants App
 
-Interact with frontend created by peers here:
+Interact with frontend created by my peers here:
 https://water-my-plants-8yhy6tsjf-team-32.vercel.app/
 
 Swagger documentation here:
