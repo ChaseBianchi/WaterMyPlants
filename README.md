@@ -2,7 +2,7 @@
 Interact with front end created by my peers here:
 https://water-my-plants-8yhy6tsjf-team-32.vercel.app/
 
-(quick login: user: admin, password: password)
+(for testing purposes, user: admin, password: password)
 
 
 Swagger documentation here:
